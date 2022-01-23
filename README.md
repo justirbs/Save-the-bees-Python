@@ -3,12 +3,12 @@
 Pour lancer le programme, il faut télécharger la librairie Pygame, si ce n’est pas déjà fait.
 
 Installer Pygame :
-  Sous Windows : py−m pip  install−U pygame --user
-  Sous Linux : python3 -m pip install -U pygame --user
+- Sous Windows : py−m pip  install−U pygame --user
+- Sous Linux : python3 -m pip install -U pygame --user
 
 Exécuter le jeu :
-  Sous Windows : py Save_the_bees.py
-  Sous Linux : python3 Save_the_bees.py
+- Sous Windows : py Save_the_bees.py
+- Sous Linux : python3 Save_the_bees.py
 
 
 Remarque :
