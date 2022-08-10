@@ -1,5 +1,5 @@
 import pygame
-from boutique import *
+from src.boutique import *
 
 
 def afficherTexte(ecran, vie, miel, argent, temperature, jour) :
@@ -175,11 +175,11 @@ def afficherDanger(ecran, danger):
 
 
 def afficherOrdreChamp(ecran):
-    image = pygame.image.load("fleche.png").convert_alpha()
+    image = pygame.image.load("img/fleche.png").convert_alpha()
     ecran.blit(image, (100,190))
 
 def afficherOrdreBoutique(ecran):
-    image = pygame.image.load("fleche.png").convert_alpha()
+    image = pygame.image.load("img/fleche.png").convert_alpha()
     ecran.blit(image, (100,290))
 
 

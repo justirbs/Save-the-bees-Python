@@ -1,9 +1,9 @@
 #TIPE save the bees; gestion des ressources
 import math
 import random
-from parametres import *
-from boutique import *
-from dangers import *
+from src.parametres import *
+from src.boutique import *
+from src.dangers import *
 
 
 

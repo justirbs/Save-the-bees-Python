@@ -1,5 +1,5 @@
-from parametres import *
-from tipe_abeilles import *
+from src.parametres import *
+from src.tipe_abeilles import *
 import pygame
 
 #alerte le joueur si une population d'abeilles s'est éteinte

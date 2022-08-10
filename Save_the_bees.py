@@ -1,11 +1,11 @@
-from parametres import *
-from dangers import *
-from tipe_abeilles import *
-from boutique import*
-from ia import *
-from champs import *
+from src.parametres import *
+from src.dangers import *
+from src.tipe_abeilles import *
+from src.boutique import*
+from src.ia import *
+from src.champs import *
 import pygame
-from interface import *
+from src.interface import *
 
 
 
@@ -39,10 +39,10 @@ pygame.init()
 taille_ecran = (859, 640)
 ecran = pygame.display.set_mode(taille_ecran)
 pygame.display.set_caption("Save the bees !")
-image = pygame.image.load("Abeille.png").convert()
+image = pygame.image.load("img/Abeille.png").convert()
 pygame.display.set_icon(image)
 #Image
-image = pygame.image.load("accueil.png").convert_alpha()
+image = pygame.image.load("img/accueil.png").convert_alpha()
 #texte
 pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
@@ -87,7 +87,7 @@ while jeu_en_cours :
     x, y = pygame.mouse.get_pos()
     for event in events:
         if (event.type == pygame.MOUSEBUTTONDOWN and x>277 and x<579 and y>450 and y<535 and accueil ==0):
-            image = pygame.image.load("ecranAccueil.png").convert_alpha()
+            image = pygame.image.load("img/ecranAccueil.png").convert_alpha()
             accueil = 1
 
     #info en haut de l'écran
@@ -137,7 +137,7 @@ while jeu_en_cours :
         #action lors du clic
         for event in events:
             if (event.type == pygame.MOUSEBUTTONDOWN) and (champs_ok == 1) :
-                image = pygame.image.load("ecranChamps.png").convert_alpha()
+                image = pygame.image.load("img/ecranChamps.png").convert_alpha()
                 if ressource[0] < minMiel:
                     rsante = dangerMiel(rsante)
                 champs = 1
@@ -150,7 +150,7 @@ while jeu_en_cours :
         #action lors du clic
         for event in events:
             if (event.type == pygame.MOUSEBUTTONDOWN) and (boutique_ok == 1) :
-                image = pygame.image.load("ecranBoutique.png").convert_alpha()
+                image = pygame.image.load("img/ecranBoutique.png").convert_alpha()
                 boutique = 1
                 # on calcule le prix du miel
                 prix=changementPrix()
@@ -160,7 +160,7 @@ while jeu_en_cours :
             #action
             for event in events:
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    image = pygame.image.load("fond.png").convert_alpha()
+                    image = pygame.image.load("img/fond.png").convert_alpha()
                     champs = 0
                     choix = 1
                     nbChamp = 1
@@ -169,7 +169,7 @@ while jeu_en_cours :
             #action
             for event in events:
                 if event.type == pygame.MOUSEBUTTONDOWN :
-                    image = pygame.image.load("fond.png").convert_alpha()
+                    image = pygame.image.load("img/fond.png").convert_alpha()
                     champs = 0
                     choix = 1
                     nbChamp = 3
@@ -178,7 +178,7 @@ while jeu_en_cours :
             #action
             for event in events:
                 if event.type == pygame.MOUSEBUTTONDOWN :
-                    image = pygame.image.load("fond.png").convert_alpha()
+                    image = pygame.image.load("img/fond.png").convert_alpha()
                     champs = 0
                     choix = 1
                     nbChamp = 2
@@ -186,7 +186,7 @@ while jeu_en_cours :
         if(x>0 and x<50 and y>0 and y<50 and champs == 1) :
             for event in events:
                 if event.type == pygame.MOUSEBUTTONDOWN :
-                    image = pygame.image.load("ecranAccueil.png").convert_alpha()
+                    image = pygame.image.load("img/ecranAccueil.png").convert_alpha()
                     champs = 0
 
     if (choix == 1 and boutique == 0 and champs == 0):
@@ -202,7 +202,7 @@ while jeu_en_cours :
                 nbAbeille = nbAbeille - 100
             if (event.type == pygame.MOUSEBUTTONDOWN and x>380 and x<471 and y>360 and y<401) :
                 #action
-                image = pygame.image.load("ecranAccueil.png").convert_alpha()
+                image = pygame.image.load("img/ecranAccueil.png").convert_alpha()
                 abeilles = dangerChamp(pollution[nbChamp-1], abeilles, nbAbeille)
                 if pollution[nbChamp-1] != 0 :
                     polution_ok = 1
@@ -268,7 +268,7 @@ while jeu_en_cours :
 
             # pour sortir de la boutique
             if (event.type == pygame.MOUSEBUTTONDOWN and x>764 and x<823 and y>70 and y<162 and boutique == 1)  :
-                image = pygame.image.load("ecranAccueil.png").convert_alpha()
+                image = pygame.image.load("img/ecranAccueil.png").convert_alpha()
                 if maxMiel_ok:
                     abeilles = repartitionMortRuche(abeilles, 0.3)
                     abeilles[5] -= int(abeilles[5]*0.3)
@@ -288,7 +288,7 @@ while jeu_en_cours :
 
     if defaite == 1:
         accueil = 0
-        image = pygame.image.load("fond2.png").convert_alpha()
+        image = pygame.image.load("img/fond2.png").convert_alpha()
         textePerdu = myfont.render("La reine des abeilles est morte ! C'est la fin de la partie, vous perdez.", False, (0, 0, 0)) #afficher texte
         textePerdu2 = myfont.render("Votre ruche a survécu "+str(jour)+" jours",False, (0, 0, 0))
         ecran.blit(textePerdu,(170,220))

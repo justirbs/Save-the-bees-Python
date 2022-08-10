@@ -1,6 +1,6 @@
 #ici sont stockées les fonctions relatives à la boutique
-from tipe_abeilles import *
-from parametres import *
+from src.tipe_abeilles import *
+from src.parametres import *
 import random
 import pygame
 

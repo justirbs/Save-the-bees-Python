@@ -1,6 +1,6 @@
 # Save the bees
 
-<p align="center"><img src="ecranAccueil.png" width="400"></p>
+<p align="center"><img src="img/ecranAccueil.png" width="400"></p>
 
 Pour lancer le programme, il faut télécharger la librairie Pygame, si ce n’est pas déjà fait.
 

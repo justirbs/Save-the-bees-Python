@@ -1,6 +1,6 @@
-from parametres import *
-from tipe_abeilles import *
-from interface import *
+from src.parametres import *
+from src.tipe_abeilles import *
+from src.interface import *
 import random
 
 # Fonction qui choisi aléatoirement le danger du jour
